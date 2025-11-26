@@ -4,7 +4,7 @@ import os
 
 st.title('Social Media Mental Health Classification')
 
-logo_path = 'images/parami.jpg'
+logo_path = 'parami.jpg'
 if os.path.exists(logo_path):
     st.sidebar.image(logo_path, width = 150)
 
@@ -55,3 +55,4 @@ if st.button("Predict Your Mental State"):
     st.success(f"Your Mental State is {target_names[result[0]]}")
     
     
+
