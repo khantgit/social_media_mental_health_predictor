@@ -1,0 +1,15 @@
+# Python Libraries
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+
+# Machine Learning Library
+
+- Scikit-learn
+
+# Deployment
+
+- Streamlit
+- GitHub Repository
