@@ -50,7 +50,7 @@ platform_code = platform_dict.get(s3)
 status_images = {
     'Healthy': 'healthy.jpg',   
     'Stressed': 'stressed.jpg',
-    'At_Risk': 'at_risk.jpg'
+    'At_Risk': 'at_risk.jpg'}
 
 # create an user-input dataframe
 if st.button("Predict Your Mental State"):
@@ -61,5 +61,6 @@ if st.button("Predict Your Mental State"):
     st.success(f"Your Mental State is {target_names[result[0]]}")
     
     
+
 
 
