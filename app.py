@@ -52,6 +52,14 @@ status_images = {
     'Stressed': 'stressed.jpg',
     'At_Risk': 'at_risk.jpg'}
 
+# create guidelines
+guidelines = {
+    'Healthy': "Great job! Keep maintaining your balanced digital habits and healthy lifestyle.",
+    'Stressed': "Consider taking a break from social media. Try to get more sleep and reduce screen time.",
+    'At_Risk': "Please prioritize your well-being. Reach out to a professional or a trusted friend, and limit social media use significantly."
+}
+
+
 # create an user-input dataframe
 if st.button("Predict Your Mental State"):
     input_arr = [[s1, gender_code, platform_code, s4, s5, s6, s7, s8, s9, s10, s11, s12]]
@@ -63,7 +71,13 @@ if st.button("Predict Your Mental State"):
 
 if final_result in status_images and os.path.exists(status_images[final_result]):
         st.image(status_images[final_result], width=400)
+
+# Display Guidelines
+st.markdown("### 📋 Guidelines:")
+if final_result in guidelines:
+        st.info(guidelines[final_result])
     
+
 
 
 
