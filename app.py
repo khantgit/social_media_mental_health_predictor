@@ -46,6 +46,12 @@ platform_dict = {"Facebook": 0, "Instagram": 1, "Snapchat": 2, "TikTok": 3, "Twi
 gender_code = gender_dict.get(s2)
 platform_code = platform_dict.get(s3)
 
+# create images for target
+status_images = {
+    'Healthy': 'healthy.jpg',   
+    'Stressed': 'stressed.jpg',
+    'At_Risk': 'at_risk.jpg'
+
 # create an user-input dataframe
 if st.button("Predict Your Mental State"):
     input_arr = [[s1, gender_code, platform_code, s4, s5, s6, s7, s8, s9, s10, s11, s12]]
@@ -55,4 +61,5 @@ if st.button("Predict Your Mental State"):
     st.success(f"Your Mental State is {target_names[result[0]]}")
     
     
+
 
