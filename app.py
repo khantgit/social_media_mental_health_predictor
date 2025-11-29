@@ -54,9 +54,31 @@ status_images = {
 
 # create guidelines
 guidelines = {
-    'Healthy': "Great job! Keep maintaining your balanced digital habits and healthy lifestyle.",
-    'Stressed': "Consider taking a break from social media. Try to get more sleep and reduce screen time.",
-    'At_Risk': "Please prioritize your well-being. Reach out to a professional or a trusted friend, and limit social media use significantly."
+    'Healthy': """
+        ### 🌟 Keep up the Great Work!
+        Your digital habits seem balanced. Here is how to maintain this:
+        * Routine: Continue prioritizing your sleep (7+ hours).
+        * Movement: Keep your physical activity levels up.
+        * Mindfulness: Share your healthy habits with friends who might be struggling!
+        """,
+        
+        'Stressed': """
+        ### ⚠️ Time to De-compress
+        You are showing signs of high stress. Let's fix that:
+        * Digital Detox: Try staying off social media for the next 24 hours.
+        * Screen Limit: Set a timer on your phone to limit apps to 30 mins/day.
+        * Sleep Priority: No screens 1 hour before bed.
+        * Activity: Go for a 15-minute walk outside without your phone.
+        """,
+        
+        'At_Risk': """
+        ### 🚨 Immediate Action Recommended
+        Your mental well-being requires attention right now.
+        * Seek Support: Please reach out to a counselor, therapist, or a trusted family member immediately.
+        * Strict Limits: Delete the most stressful social media app from your phone for one week.
+        * Stop Scrolling: Avoid negative interactions online completely.
+        * You are not alone: Help is available. Please talk to someone today.
+        """
 }
 
 
@@ -77,6 +99,7 @@ if st.button("Predict Your Mental State"):
     if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
