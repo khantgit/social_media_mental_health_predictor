@@ -59,8 +59,11 @@ if st.button("Predict Your Mental State"):
     result = model.predict(input_arr)
     target_names = ['At_Risk', 'Healthy', 'Stressed']
     st.success(f"Your Mental State is {target_names[result[0]]}")
+
+if target_names[result[0]] in status_images and os.path.exists(status_images[target_names[result[0]]]):
+        st.image(status_images[target_names[result[0]]], width=400)
     
-    
+
 
 
 
