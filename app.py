@@ -69,14 +69,15 @@ if st.button("Predict Your Mental State"):
     final_result = target_names[result[0]]
     st.success(f"Your Mental State is {final_result}")
 
-if final_result in status_images and os.path.exists(status_images[final_result]):
+    if final_result in status_images and os.path.exists(status_images[final_result]):
         st.image(status_images[final_result], width=400)
 
-# Display Guidelines
-st.markdown("### 📋 Guidelines:")
-if final_result in guidelines:
+    # Display Guidelines
+    st.markdown("### 📋 Guidelines:")
+    if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
