@@ -58,11 +58,13 @@ if st.button("Predict Your Mental State"):
     model = load_model()
     result = model.predict(input_arr)
     target_names = ['At_Risk', 'Healthy', 'Stressed']
-    st.success(f"Your Mental State is {target_names[result[0]]}")
+    final_result = target_names[result[0]]
+    st.success(f"Your Mental State is {final_result}")
 
-if target_names[result[0]] in status_images and os.path.exists(status_images[target_names[result[0]]]):
-        st.image(status_images[target_names[result[0]]], width=400)
+if final_result in status_images and os.path.exists(status_images[final_result):
+        st.image(status_images[final_result], width=400)
     
+
 
 
 
