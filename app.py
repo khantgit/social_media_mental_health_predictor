@@ -1,6 +1,7 @@
 import streamlit as st 
 import pickle
 import os
+import pandas as pd
 
 st.title('Social Media Mental Health Classification')
 
@@ -101,6 +102,7 @@ if st.button("Predict Your Mental State"):
     if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
