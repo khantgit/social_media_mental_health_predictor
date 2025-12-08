@@ -22,8 +22,8 @@ df1 = pd.read_csv('social_media_mental_health.csv')
 
 st.header('Demographic Information')
 
-s1 = st.number_input("What is the Participant's Age? (in years)", df1.age.min(), df.age.max(), step = 1, value = 30)
-s2 = st.selectbox("What is your Gender?", df.gender.unique().tolist())
+s1 = st.number_input("What is the Participant's Age? (in years)", df1.age.min(), df1.age.max(), step = 1, value = 30)
+s2 = st.selectbox("What is your Gender?", df1.gender.unique().tolist())
 s3 = st.selectbox("Which Social Media Platform do you use?", df1.platform.unique().tolist())
 
 st.header('Digital Habits & Interactions')
@@ -102,6 +102,7 @@ if st.button("Predict Your Mental State"):
     if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
