@@ -27,20 +27,20 @@ s2 = st.selectbox("What is your Gender?", df1.gender.unique().tolist())
 s3 = st.selectbox("Which Social Media Platform do you use?", df1.platform.unique().tolist())
 
 st.header('Digital Habits & Interactions')
-s4 = st.slider("What is your daily Screen Time in minutes?", df1.daily_screen_time_min.min(), df1.daily_screen_time_min.max(), value = df1.daily_screen_time_min.mean())
-s5 = st.slider("What is your daily Social Media Time in minutes?", min_value = 0, max_value = 1440)
+s4 = st.slider("What is your daily Screen Time in minutes?", df1.daily_screen_time_min.min(), df1.daily_screen_time_min.max())
+s5 = st.slider("What is your daily Social Media Time in minutes?", df1.social_media_time_min.min(), df1.social_media_time_min.max())
 
-s6 = st.number_input("Negative Interactions Count", min_value=0, value=0)
-s7= st.number_input("Positive Interactions Count", min_value=0, value=0)
+s6 = st.number_input("Negative Interactions Count", df1.negative_interactions_count.min(), df1.negative_interactions_count.max())
+s7= st.number_input("Positive Interactions Count", df1.positive_interactions_count.min(), df1.positive_interactions_count.max())
 
 st.header('Well Beings')
 
-s8 = st.slider("How many hours do you sleep?", min_value = 0.0, max_value = 24.0, step=0.5, value = 7.0)
-s9 = st.number_input("How many minutes do you do physical activties?", min_value=0, value=30)
+s8 = st.slider("How many hours do you sleep?", df1.sleep_hours.min(), df1.sleep_hours.max(), step=0.5, value = 7.0)
+s9 = st.number_input("How many minutes do you do physical activties?", df1.physical_activity_min.min(), df1.physical_activity_min.max())
     
-s10 = st.slider("How do you rate your Anxiety Level from 0 to 10?", min_value = 0, max_value = 10, step = 1)
-s11 = st.slider("How do you rate your Stress Level from 0 to 10?", min_value = 0, max_value = 10, step = 1)
-s12 = st.slider("How do you rate your Mood Level from 0 to 10?", min_value = 0, max_value = 10, step = 1)
+s10 = st.slider("How do you rate your Anxiety Level from 0 to 10?", df1.anxiety_level.min(), df1.anxiety_level.max(), step = 1)
+s11 = st.slider("How do you rate your Stress Level from 0 to 10?", df1.stress_level.min(), df1.stress_level.max(), step = 1)
+s12 = st.slider("How do you rate your Mood Level from 0 to 10?", df1.mood_level.min(), df1.mood_level.max(), step = 1)
 
 # for categorical variables
 gender_dict = {'Female' : 0, 'Male' : 1, 'Other': 2}
@@ -102,6 +102,7 @@ if st.button("Predict Your Mental State"):
     if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
