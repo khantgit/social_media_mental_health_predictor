@@ -26,7 +26,7 @@ s2 = st.selectbox("What is your Gender?", df.gender.unique().tolist())
 s3 = st.selectbox("Which Social Media Platform do you use?", df1.platform.unique().tolist())
 
 st.header('Digital Habits & Interactions')
-s4 = st.slider("What is your daily Screen Time in minutes?", min_value = 0, max_value = 1440)
+s4 = st.slider("What is your daily Screen Time in minutes?", df1.daily_screen_time_min.min(), df1.daily_screen_time_min.max(), value = df1.daily_screen_time_min.mean())
 s5 = st.slider("What is your daily Social Media Time in minutes?", min_value = 0, max_value = 1440)
 
 s6 = st.number_input("Negative Interactions Count", min_value=0, value=0)
@@ -101,6 +101,7 @@ if st.button("Predict Your Mental State"):
     if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
