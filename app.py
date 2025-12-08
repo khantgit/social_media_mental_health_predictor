@@ -17,22 +17,24 @@ def load_model():
         model = pickle.load(f)
     return model
 
+df1 = pd.read_csv('social_media_mental_health.csv')
+
 st.header('Demographic Information')
 
-s1 = st.number_input("What is the Participant's Age? (in years)", min_value = 0, max_value = 120, step = 1, value = 30)
-s2 = st.selectbox("What is your Gender?", ['Male', 'Female', 'Other'])
-s3 = st.selectbox("Which Social Media Platform do you use?", ['Facebook', 'TikTok', 'YouTube', 'WhatsApp', 'Snapchat', 'Instagram','Twitter'])
+s1 = st.number_input("What is the Participant's Age? (in years)", df1.age.min(), df.age.max(), step = 1, value = 30)
+s2 = st.selectbox("What is your Gender?", df.gender.unique().tolist()])
+s3 = st.selectbox("Which Social Media Platform do you use?", df1.platform.unique().tolist())
 
 st.header('Digital Habits & Interactions')
-s4 = st.slider("What is your daily Screen Time in minutes?", min_value = 0, max_value = 1500)
-s5 = st.slider("What is your daily Social Media Time in minutes?", min_value = 0, max_value = 1500)
+s4 = st.slider("What is your daily Screen Time in minutes?", min_value = 0, max_value = 1440)
+s5 = st.slider("What is your daily Social Media Time in minutes?", min_value = 0, max_value = 1440)
 
 s6 = st.number_input("Negative Interactions Count", min_value=0, value=0)
 s7= st.number_input("Positive Interactions Count", min_value=0, value=0)
 
 st.header('Well Beings')
 
-s8 = st.slider("How many hours do you sleep?", min_value = 0.0, max_value = 12.0, step=0.5, value = 7.0)
+s8 = st.slider("How many hours do you sleep?", min_value = 0.0, max_value = 24.0, step=0.5, value = 7.0)
 s9 = st.number_input("How many minutes do you do physical activties?", min_value=0, value=30)
     
 s10 = st.slider("How do you rate your Anxiety Level from 0 to 10?", min_value = 0, max_value = 10, step = 1)
@@ -99,6 +101,7 @@ if st.button("Predict Your Mental State"):
     if final_result in guidelines:
         st.info(guidelines[final_result])
     
+
 
 
 
